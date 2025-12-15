@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Suprema | Productos Supremos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --rojo-suprema:#c62828;
+      --rojo-oscuro:#8e0000;
+      --amarillo-suprema:#ffc107;
+      --amarillo-oscuro:#ffb300;
+      --negro:#1c1c1c;
+    }
+
+    body{
+      font-family: 'Segoe UI', sans-serif;
+      background:#fafafa;
+    }
+
+    /* HEADER */
+    header{
+      background:linear-gradient(90deg,var(--rojo-suprema),var(--rojo-oscuro));
+    }
+    header h1{
+      font-weight:800;
+      letter-spacing:1px;
+    }
+    nav a{
+      color:#fff;
+      margin-left:15px;
+      text-decoration:none;
+      font-weight:600;
+    }
+    nav a:hover{
+      color:var(--amarillo-suprema);
+    }
+
+    /* HERO */
+    .hero{
+      background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+      url('https://3.bp.blogspot.com/-5Q7Y0YjcG0I/WuyGfVli-NI/AAAAAAAAR2E/2b7htkov7R8GpavTyquL9qiejxH9qMJhgCLcBGAs/s1600/Galletas%2BLa%2BSuprema%2BBolivia%2B0111.jpg') center/cover no-repeat;
+      color:#fff;
+      padding:120px 0;
+      text-align:center;
+    }
+    .hero h1{
+      font-size:3rem;
+      font-weight:800;
+      color:var(--amarillo-suprema);
+    }
+    .hero p{
+      font-size:1.2rem;
+      max-width:600px;
+      margin:auto;
+    }
+
+    /* TITULOS */
+    section h2{
+      color:var(--rojo-suprema);
+      font-weight:800;
+      position:relative;
+    }
+    section h2::after{
+      content:"";
+      width:80px;
+      height:4px;
+      background:var(--amarillo-suprema);
+      display:block;
+      margin:12px auto 0;
+      border-radius:2px;
+    }
+
+    /* PRODUCTOS */
+    .producto{
+      background:#fff;
+      padding:25px;
+      border-radius:18px;
+      box-shadow:0 10px 25px rgba(0,0,0,.08);
+      height:100%;
+      border-top:6px solid var(--amarillo-suprema);
+    }
+    .producto h3{
+      color:var(--rojo-suprema);
+      font-weight:700;
+    }
+    .precio{
+      color:var(--amarillo-oscuro);
+      font-size:1.4rem;
+      font-weight:800;
+    }
+
+    /* BENEFICIOS */
+    .beneficio{
+      background:var(--rojo-suprema);
+      color:#fff;
+      padding:30px;
+      border-radius:20px;
+      text-align:center;
+      height:100%;
+    }
+    .beneficio span{
+      color:var(--amarillo-suprema);
+      font-size:2rem;
+      font-weight:800;
+    }
+
+    /* CONTACTO */
+    .btn-suprema{
+      background:var(--amarillo-suprema);
+      color:#000;
+      font-weight:800;
+      border:none;
+    }
+    .btn-suprema:hover{
+      background:var(--amarillo-oscuro);
+    }
+
+    footer{
+      background:var(--negro);
+      color:#fff;
+    }
+
+    /* ------------------ RESPONSIVE ------------------ */
+
+    /* CELULAR */
+    @media (max-width:767px){
+      /* HEADER */
+      header .container{
+        flex-direction:column;
+        align-items:center;
+      }
+      nav{
+        margin-top:15px;
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+      nav a{
+        margin:5px 10px;
+        font-size:1rem;
+      }
+
+      /* HERO */
+      .hero{
+        padding:60px 15px;
+      }
+      .hero h1{
+        font-size:1.8rem;
+      }
+      .hero p{
+        font-size:0.95rem;
+        max-width:280px;
+      }
+
+      /* TITULOS */
+      section h2{
+        font-size:1.3rem;
+      }
+      section h2::after{
+        width:50px;
+        height:3px;
+      }
+
+      /* PRODUCTOS */
+      .row.g-4 > .col-md-4{
+        flex:0 0 100%;
+        max-width:100%;
+      }
+      .producto{
+        margin-bottom:20px;
+      }
+      .producto h3{
+        font-size:1.2rem;
+      }
+      .precio{
+        font-size:1.2rem;
+      }
+
+      /* BENEFICIOS */
+      .beneficio{
+        margin-bottom:20px;
+        padding:20px;
+      }
+      .beneficio span{
+        font-size:1.5rem;
+      }
+
+      /* FORMULARIO CONTACTO */
+      form{
+        max-width:90%;
+        padding:20px;
+      }
+    }
+
+    /* TABLET */
+    @media (min-width:768px) and (max-width:1024px){
+      header h1{
+        font-size:2rem;
+      }
+      nav a{
+        font-size:1rem;
+        margin-left:12px;
+      }
+      .hero{
+        padding:100px 20px;
+      }
+      .hero h1{
+        font-size:2.5rem;
+      }
+      .hero p{
+        font-size:1.1rem;
+        max-width:500px;
+      }
+      section h2{
+        font-size:1.6rem;
+      }
+      section h2::after{
+        width:70px;
+        height:3px;
+      }
+      .producto h3{
+        font-size:1.3rem;
+      }
+      .precio{
+        font-size:1.3rem;
+      }
+      .beneficio span{
+        font-size:1.8rem;
+      }
+      form{
+        max-width:450px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="py-3 shadow">
+  <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+    <h1 class="text-white mb-2 mb-md-0">La Suprema</h1>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#productos">Productos</a>
+      <a href="#beneficios">Beneficios</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<section id="inicio" class="hero">
+  <div class="container">
+    <h1>Productos Supremos</h1>
+    <p>Calidad boliviana elaborada con ingredientes seleccionados, tradición y sabor que acompaña a tu familia todos los días.</p>
+  </div>
+</section>
+
+<section id="productos" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-5">Nuestros Productos</h2>
+    <div class="row g-4">
+
+      <div class="col-md-4">
+        <div class="producto text-center">
+          <h3>Harina Suprema</h3>
+          <p>Ideal para panadería, repostería y uso diario. Textura fina y alto rendimiento.</p>
+          <div class="precio">15 Bs</div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="producto text-center">
+          <h3>Fideos</h3>
+          <p>Elaborados con trigo seleccionado para una cocción perfecta y gran sabor.</p>
+          <div class="precio">15 Bs</div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="producto">
+          <h3 class="text-center">Galletas</h3>
+          <ul class="mt-3">
+            <li>Waffs</li>
+            <li>María Bonita</li>
+            <li>Surtidas</li>
+            <li>Ronditas</li>
+            <li>Trigueñas Salvado</li>
+            <li>Infinitas</li>
+          </ul>
+          <div class="precio text-center">Desde 4 Bs</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="beneficios" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-5">¿Por qué elegir La Suprema?</h2>
+    <div class="row g-4 mb-5">
+      <div class="col-md-4">
+        <div class="beneficio">
+          <span>+50</span>
+          <p class="mt-3">Años de experiencia respaldando la calidad de nuestros productos en todo el país.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="beneficio">
+          <span>100%</span>
+          <p class="mt-3">Procesos controlados, ingredientes seleccionados y altos estándares de producción.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="beneficio">
+          <span>∞</span>
+          <p class="mt-3">Compromiso constante con la innovación, el sabor y la satisfacción del cliente.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="producto">
+          <h3>Calidad Garantizada</h3>
+          <p>Cada producto La Suprema pasa por estrictos controles de calidad que aseguran frescura, sabor y seguridad alimentaria.</p>
+          <p>Trabajamos bajo normas que nos permiten ofrecer alimentos confiables para toda la familia.</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="producto">
+          <h3>Presencia Nacional</h3>
+          <p>La Suprema llega a mercados, tiendas y hogares de todo Bolivia, siendo una marca reconocida y preferida.</p>
+          <p>Nuestra distribución eficiente garantiza productos siempre disponibles.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="nosotros" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Sobre Nosotros</h2>
+    <p class="mx-auto text-center" style="max-width:800px">
+      <strong>La Suprema</strong> es una empresa boliviana con una larga trayectoria en la industria alimentaria, dedicada a elaborar productos que forman parte del día a día de miles de familias.
+    </p>
+    <div class="row g-4 mt-4">
+      <div class="col-md-4">
+        <div class="producto">
+          <h3>Misión</h3>
+          <p>Ofrecer productos alimenticios de alta calidad que combinen tradición, nutrición y sabor, contribuyendo al bienestar de nuestros consumidores.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="producto">
+          <h3>Visión</h3>
+          <p>Ser la marca líder en productos alimenticios a nivel nacional, reconocida por su innovación, confianza y compromiso social.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="producto">
+          <h3>Valores</h3>
+          <ul>
+            <li>Calidad</li>
+            <li>Responsabilidad</li>
+            <li>Tradición</li>
+            <li>Innovación</li>
+            <li>Compromiso</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto" class="py-5 bg-light">
+  <div class="container text-center">
+    <h2 class="mb-4">Contacto y Pedidos</h2>
+    <form class="mx-auto p-4 bg-white shadow rounded" style="max-width:500px">
+      <div class="mb-3">
+        <label class="form-label">Nombre</label>
+        <input type="text" class="form-control">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Teléfono</label>
+        <input type="text" class="form-control">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Mensaje</label>
+        <textarea class="form-control" rows="4"></textarea>
+      </div>
+      <button class="btn btn-suprema w-100">Enviar Pedido</button>
+    </form>
+  </div>
+</section>
+
+<footer class="py-3 text-center">
+  <p class="mb-0">© 2025 La Suprema — Calidad que se siente</p>
+</footer>
+
+</body>
+</html>
